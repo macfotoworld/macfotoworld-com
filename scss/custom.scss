@@ -1,0 +1,310 @@
+$modal-content-bg: transparent !default;
+$modal-content-border-width: 0;
+$modal-backdrop-opacity: 0.9 !default;
+$modal-backdrop-bg: white !default;
+$carousel-control-color: black !default;
+$carousel-control-opacity: 0.4 !default;
+$carousel-control-transition: opacity 0.3s ease-in-out !default;
+
+@import url(https://fonts.googleapis.com/css?family=Gruppo&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Lato:300&display=swap);
+@import url("https://fonts.googleapis.com/css?family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Monoton&display=swap");
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+.video-full {
+  width: 100%;
+  min-width: 100%;
+}
+
+.video-arrow {
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  color: black;
+}
+
+.copyright {
+  font-family: Arial;
+  font-size: x-small;
+}
+
+p {
+  span {
+    display: block;
+    color: #333333;
+    font-style: normal;
+    font-weight: bold;
+    margin-top: 1em;
+  }
+}
+
+.gray-box {
+  background: #ededed;
+  border-left: 8px solid #009ddf;
+}
+
+.black-box-header {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: xx-large;
+}
+
+.black-box {
+  background: #000000;
+  color: #ffffff;
+  width: 100%;
+  min-width: 100%;
+  p {
+    font-size: x-large;
+    font-family: "Barlow Semi Condensed", sans-serif;
+  }
+}
+
+blockquote {
+  font-family: "Lato", sans-serif;
+  font-style: italic;
+
+  color: #555555;
+  padding: 1.2em 30px 1.2em 75px;
+  border-left: 8px solid #009ddf;
+  line-height: 1.6;
+  position: relative;
+  background: #ededed;
+}
+
+blockquote::before {
+  z-index: 1500;
+
+  font-family: Arial;
+  content: "\201C";
+  color: #009ddf;
+  opacity: 0.4;
+  font-size: 14em;
+
+  position: absolute;
+  left: 10px;
+  top: -50px;
+  width: 100%;
+}
+
+blockquote span {
+  display: block;
+  color: #333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+.small-text {
+  font-family: "Lato", sans-serif;
+  font-size: small;
+}
+
+p,
+h2,
+h3,
+h4 {
+  font-family: "Lato", sans-serif;
+}
+
+h2,
+h3,
+h4 {
+  font-weight: bold;
+}
+
+p {
+  font-size: large;
+}
+
+.my-header {
+  font-family: "Gruppo", cursive;
+  h1 {
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 0.5em;
+  }
+}
+
+.my-brand {
+  font-family: "Gruppo", cursive;
+  font-size: medium;
+}
+
+.icon-logo-black {
+  font-size: 75px !important;
+}
+
+.my-brand-top-left {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 2;
+}
+
+.my-nav {
+  font-family: "Gruppo", cursive;
+  font-size: medium;
+  font-weight: bold;
+  .nav-item {
+    margin-left: 3em;
+    margin-right: 3em;
+  }
+}
+
+.my-h1 {
+  font-family: "Gruppo", cursive;
+  font-size: large;
+  font-weight: bold;
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: #009ddf;
+}
+
+a:active {
+  color: black;
+}
+
+.rotate-90deg {
+  transition: 0.7s;
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -ms-transition: 0.7s;
+  -o-transition: 0.7s;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.rotate-90deg:hover {
+  transition: 0.7s;
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -ms-transition: 0.7s;
+  -o-transition: 0.7s;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.carousel-control-close {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 15%;
+  height: 15%;
+  right: 0;
+  text-align: center;
+  text-shadow: none;
+
+  color: black !important;
+  opacity: 0.4;
+
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  -ms-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.carousel-control-close:hover {
+  color: black !important;
+  opacity: 0.9;
+}
+
+.relative {
+  position: relative;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.select {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+
+  font-family: "Gruppo", cursive;
+  font-size: 2em;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: black !important;
+  background: white !important;
+  opacity: 0;
+
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  -ms-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.select:hover {
+  opacity: 0.6;
+}
+
+.modal-full {
+  min-width: 100%;
+  margin: 0;
+
+  .carousel-inner > .carousel-item > img {
+    height: 100vh;
+    max-height: 100vh;
+  }
+}
+
+.modal-full .modal-content {
+  min-height: 100vh;
+}
+
+.social-apps {
+  position: fixed;
+  top: 15px;
+  z-index: 2;
+  right: 0;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.add-content-arrow {
+  bottom: 85%;
+}
+
+.my-carousel > .carousel-inner > .carousel-item > img {
+  max-height: 60vh;
+}
