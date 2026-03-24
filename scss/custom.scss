@@ -2,7 +2,7 @@ $modal-content-bg: transparent !default;
 $modal-content-border-width: 0;
 $modal-backdrop-opacity: 0.9 !default;
 $modal-backdrop-bg: white !default;
-$carousel-control-color: white !default;
+$carousel-control-color: #111 !default;
 $carousel-control-opacity: 0 !default;
 $carousel-control-transition: opacity 0.4s ease-in-out !default;
 
@@ -116,6 +116,12 @@ p {
 }
 
 .my-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background: #000;
   font-family: "Gruppo", cursive;
   h1 {
     font-size: 3em;
@@ -141,15 +147,29 @@ p {
 }
 
 .my-nav {
+  position: fixed;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  z-index: 50;
+  width: auto;
+  background: transparent;
+  padding: 0;
   font-family: "Lato", sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 400;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   .nav-item {
-    margin-left: 2em;
-    margin-right: 2em;
+    margin: 0.9em 0;
   }
+}
+
+.tab-content {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  margin-top: 110px;
 }
 
 .my-h1 {
@@ -203,7 +223,7 @@ a:active {
   right: 0;
   text-align: center;
   text-shadow: none;
-  color: white !important;
+  color: #111 !important;
   opacity: 0;
   background: transparent;
   border: none;
@@ -223,7 +243,7 @@ a:active {
 .carousel-control-close {
   &:hover,
   &:focus {
-    color: white !important;
+    color: #111 !important;
     opacity: 1;
     outline: none;
     box-shadow: none;
@@ -256,22 +276,30 @@ a:active {
   cursor: pointer;
 }
 
-// Portfolio hover — pure dark dim, no text (image speaks for itself)
+// Portfolio hover — dark overlay with centered title
 .select {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
   cursor: pointer;
-  font-size: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lato", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
   color: transparent !important;
   background: rgba(0, 0, 0, 0) !important;
   opacity: 0;
-  transition: opacity 0.35s ease-in-out, background 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out, background 0.35s ease-in-out, color 0.35s ease-in-out;
 
   &:hover {
     opacity: 1;
-    background: rgba(0, 0, 0, 0.25) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    background: rgba(0, 0, 0, 0.45) !important;
   }
 }
 
@@ -307,13 +335,14 @@ a:active {
   background: #000;
 
   > .carousel-inner > .carousel-item > img {
-    height: 100vh;        // fallback for older browsers
-    height: 100svh;       // adapts to mobile browser chrome
+    height: calc(100vh - 110px);
+    height: calc(100svh - 110px);
     width: 100%;
     object-fit: contain;
     max-height: none;
   }
 }
+
 
 // Mobile hamburger button
 .hamburger-btn {
@@ -382,6 +411,12 @@ a:active {
   }
   .my-header {
     padding-right: 3rem;
+    h1 {
+      font-size: 2em;
+    }
+  }
+  .tab-content {
+    margin-top: 80px;
   }
 }
 
@@ -394,6 +429,13 @@ a:active {
 body {
   background: #000;
   animation: pageFadeIn 0.6s ease-in-out;
+}
+
+// Portfolio grid — staggered vertical spacing for artistic feel
+.portfolio-grid {
+  .col-md-4:nth-child(3n+1) { margin-top: 7rem; }
+  .col-md-4:nth-child(3n+2) { margin-top: 1rem; }
+  .col-md-4:nth-child(3n+3) { margin-top: 5rem; }
 }
 
 // Info section cards — transparent on dark background

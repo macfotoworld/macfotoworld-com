@@ -24,6 +24,7 @@ function openFSLightbox(url, length) {
   // Enable key handler
   document.onkeydown = function(e) {
     switch (e.key) {
+      case "Escape":
       case "ArrowUp":
         document.getElementById("modal-carousel-01-close").click();
         break;
