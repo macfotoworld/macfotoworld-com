@@ -18,49 +18,62 @@
   </head>
   <body>
     <!-- Header -->
-    <div class="my-header container text-center mt-3">
-      <h1 class="align-text-middle">
-        &nbsp;M&nbsp;A&nbsp;C F&nbsp;O&nbsp;T&nbsp;O
-      </h1>
+    <div class="my-header container d-flex justify-content-center align-items-center mt-3">
+      <img class="my-logo" src="img/brand.svg" height="70" />
+      <h1>MAC FOTO</h1>
     </div>
 
-    <!-- Brand -->
-    <div class="my-brand container text-center">
-      <a href="">
-        <img class="my-logo rotate-90deg" src="/img/brand.svg" height="70px" />
-      </a>
+    <!-- Hamburger (mobile only) -->
+    <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileNav()">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Mobile nav overlay -->
+    <div class="mobile-nav-overlay d-none" id="mobile-nav-overlay">
+      <button class="mobile-nav-close" onclick="toggleMobileNav()">
+        <i class="fas fa-times"></i>
+      </button>
+      <ul class="nav flex-column text-center">
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#home" onclick="toggleMobileNav()">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#brands" onclick="toggleMobileNav()">BRANDS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#fashion" onclick="toggleMobileNav()">FASHION</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#info" onclick="toggleMobileNav()">INFO</a>
+        </li>
+      </ul>
     </div>
 
     <!-- Menu -->
     <ul class="my-nav nav justify-content-center">
-      <li class="nav-item d-none">
-        <a class="nav-link active" data-toggle="tab" href="#home"></a>
+      <li class="nav-item">
+        <a class="nav-link active" data-bs-toggle="tab" href="#home">HOME</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#brands">BRANDS</a>
+        <a class="nav-link" data-bs-toggle="tab" href="#brands">BRANDS</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#fashion"
-          >FASHION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a
-        >
+        <a class="nav-link" data-bs-toggle="tab" href="#fashion">FASHION</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#info">INFO</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#world">WORLD</a>
+        <a class="nav-link" data-bs-toggle="tab" href="#info">INFO</a>
       </li>
     </ul>
 
     <!-- Menu Content -->
-    <tab class="tab-content">
+    <div class="tab-content">
       <!-- Home -->
-      <div class="tab-pane container show active mt-5" id="home">
+      <div class="tab-pane fade show active" id="home">
         <div
           id="my-carousel"
-          class="my-carousel carousel slide container"
-          data-interval="3000"
-          data-ride="carousel"
+          class="my-carousel carousel slide"
+          data-bs-interval="3000"
+          data-bs-ride="carousel"
         >
           <div class="carousel-inner">
             <div class="carousel-item">
@@ -602,7 +615,7 @@
       </div>
 
       <!-- Brands -->
-      <div class="tab-pane fade ml-1 mt-5" id="brands">
+      <div class="tab-pane fade mx-3 mt-5" id="brands">
         <div class="row">
           <!-- First Column -->
           <div class="col-md-4">
@@ -614,19 +627,19 @@
               <img
                 src="img/brands/01-arjuna-design/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Arjuna Design</p>
             </div>
             <!-- 34 -->
             <div
-              class="col-md-10 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/brands/34-alain-paris-billboards', 3)"
             >
               <img
                 src="img/brands/34-alain-paris-billboards/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Alain Paris Billboards</p>
             </div>
@@ -638,19 +651,19 @@
               <img
                 src="img/brands/04-fab-design/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Fab Design</p>
             </div>
             <!-- 29 -->
             <div
-              class="col-md-11 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/brands/29-blink-jazz', 8)"
             >
               <img
                 src="img/brands/29-blink-jazz/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Blink Jazz</p>
             </div>
@@ -662,7 +675,7 @@
               <img
                 src="img/brands/07-hans-ubbink-campaign/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Hans Ubbink Campaign</p>
             </div>
@@ -674,19 +687,19 @@
               <img
                 src="img/brands/10-pepe-jeans-sa/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Pepe Jeans</p>
             </div>
             <!-- 13 -->
             <div
-              class="col-md-8 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/brands/13-jacky-luxury', 8)"
             >
               <img
                 src="img/brands/13-jacky-luxury/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Jacky Luxury</p>
             </div>
@@ -698,43 +711,43 @@
               <img
                 src="img/brands/16-hunkenmoller/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Hunkenmoller</p>
             </div>
             <!-- 19 -->
             <div
-              class="col-md-11 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/brands/19-relakz-jeans', 7)"
             >
               <img
                 src="img/brands/19-relakz-jeans/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Relakz Jeans</p>
             </div>
             <!-- 22 -->
             <div
-              class="col-md-8 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/brands/22-genti-rock', 6)"
             >
               <img
                 src="img/brands/22-genti-rock/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Genti Rock</p>
             </div>
             <!-- 25 -->
             <div
-              class="col-md-9 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/brands/25-arjuna-man', 5)"
             >
               <img
                 src="img/brands/25-arjuna-man/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Arjuna Man</p>
             </div>
@@ -746,7 +759,7 @@
               <img
                 src="img/brands/32-scapa/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Scapa</p>
             </div>
@@ -761,7 +774,7 @@
               <img
                 src="img/brands/02-dennis-diemcouture/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Dennis Diemcouture</p>
             </div>
@@ -773,19 +786,19 @@
               <img
                 src="img/brands/05-myomy/sean-mac-andrew-02.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Myomy</p>
             </div>
             <!-- 08 -->
             <div
-              class="col-md-10 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/brands/08-wilford', 4)"
             >
               <img
                 src="img/brands/08-wilford/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Wilford</p>
             </div>
@@ -797,19 +810,19 @@
               <img
                 src="img/brands/11-petrol-industry/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Petrol Industry</p>
             </div>
             <!-- 14 -->
             <div
-              class="col-md-10 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/brands/14-levi\'s', 3)"
             >
               <img
                 src="img/brands/14-levi's/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Levi's</p>
             </div>
@@ -821,19 +834,19 @@
               <img
                 src="img/brands/17-nike-360man/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Nike 360 Man</p>
             </div>
             <!-- 20 -->
             <div
-              class="col-md-8 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/brands/20-van-gils', 6)"
             >
               <img
                 src="img/brands/20-van-gils/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Van Gils</p>
             </div>
@@ -845,7 +858,7 @@
               <img
                 src="img/brands/23-gabriella-sa/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Gabriella SA</p>
             </div>
@@ -857,19 +870,19 @@
               <img
                 src="img/brands/26-nike-360-woman/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Nike 360 Woman</p>
             </div>
             <!-- 30 -->
             <div
-              class="col-md-11 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/brands/30-jacky-luxury-2', 7)"
             >
               <img
                 src="img/brands/30-jacky-luxury-2/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Jacky Luxury 2</p>
             </div>
@@ -878,13 +891,13 @@
           <div class="col-md-4">
             <!-- 03 -->
             <div
-              class="col-md-8 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/brands/03-destrezzed', 8)"
             >
               <img
                 src="img/brands/03-destrezzed/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Destrezzed</p>
             </div>
@@ -896,19 +909,19 @@
               <img
                 src="img/brands/06-l'oreal/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">L'Oreal</p>
             </div>
             <!-- 09 -->
             <div
-              class="col-md-10 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/brands/09-yakult', 5)"
             >
               <img
                 src="img/brands/09-yakult/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Yakult</p>
             </div>
@@ -920,7 +933,7 @@
               <img
                 src="img/brands/12-mexx-artdevision/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Mexx ArtDevision</p>
             </div>
@@ -932,67 +945,67 @@
               <img
                 src="img/brands/15-genti-newyork/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Genti New York</p>
             </div>
             <!-- 18 -->
             <div
-              class="col-md-8 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/brands/18-politan-cosmetics-paris', 4)"
             >
               <img
                 src="img/brands/18-politan-cosmetics-paris/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Politan Cosmetics Paris</p>
             </div>
             <!-- 21 -->
             <div
-              class="col-md mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/brands/21-yari-bali', 4)"
             >
               <img
                 src="img/brands/21-yari-bali/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Yari Bali</p>
             </div>
             <!-- 24 -->
             <div
-              class="col-md-10 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/brands/24-genti-jeans', 7)"
             >
               <img
                 src="img/brands/24-genti-jeans/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Genti Jeans</p>
             </div>
             <!-- 27 -->
             <div
-              class="col-md mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/brands/27-cavallaro', 9)"
             >
               <img
                 src="img/brands/27-cavallaro/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Cavallaro</p>
             </div>
             <!-- 28 -->
             <div
-              class="col-md-11 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/brands/28-genti-bond', 7)"
             >
               <img
                 src="img/brands/28-genti-bond/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Genti Bond</p>
             </div>
@@ -1004,19 +1017,19 @@
               <img
                 src="img/brands/31-petrol-race/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Petrol Race</p>
             </div>
             <!-- 33 -->
             <div
-              class="col-md-10 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/brands/33-alain-afflelou', 7)"
             >
               <img
                 src="img/brands/33-alain-afflelou/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Alain Afflelou</p>
             </div>
@@ -1025,7 +1038,7 @@
       </div>
 
       <!-- Fashion -->
-      <div class="tab-pane fade mt-5" id="fashion">
+      <div class="tab-pane fade mx-3 mt-5" id="fashion">
         <div class="row">
           <!-- First Column -->
           <div class="col-md-4">
@@ -1037,31 +1050,31 @@
               <img
                 src="img/fashion/01-menshealth-007/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Menshealth 007</p>
             </div>
             <!-- 04 -->
             <div
-              class="col-md-10 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/fashion/04-esquire-speed', 7)"
             >
               <img
                 src="img/fashion/04-esquire-speed/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Esquire Speed</p>
             </div>
             <!-- 07 -->
             <div
-              class="col-md-11 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/fashion/07-glamour', 3)"
             >
               <img
                 src="img/fashion/07-glamour/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Glamour</p>
             </div>
@@ -1073,31 +1086,31 @@
               <img
                 src="img/fashion/10-vienna-week-dutch-designers/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Vienna Week Dutch Designers</p>
             </div>
             <!-- 13 -->
             <div
-              class="col-md-10 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/fashion/13-cigarz-ny', 4)"
             >
               <img
                 src="img/fashion/13-cigarz-ny/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Cigarz NY</p>
             </div>
             <!-- 16 -->
             <div
-              class="col-md-10 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/fashion/16-editorial-link-magazine', 4)"
             >
               <img
                 src="img/fashion/16-editorial-link-magazine/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Editorial Link Magazine</p>
             </div>
@@ -1106,25 +1119,25 @@
           <div class="col-md-4">
             <!-- 02 -->
             <div
-              class="col-md-10 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/fashion/02-ny-times-coco', 7)"
             >
               <img
                 src="img/fashion/02-ny-times-coco/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">NY Times Coco</p>
             </div>
             <!-- 05 -->
             <div
-              class="col-md-8 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/fashion/05-arena-advertorial-genti-luomo', 6)"
             >
               <img
                 src="img/fashion/05-arena-advertorial-genti-luomo/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Arena Advertorial Genti Luomo</p>
             </div>
@@ -1136,19 +1149,19 @@
               <img
                 src="img/fashion/08-avantgarde-1920/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Avantgarde 1920</p>
             </div>
             <!-- 11 -->
             <div
-              class="col-md-9 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/fashion/11-marieclaire', 5)"
             >
               <img
                 src="img/fashion/11-marieclaire/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Marieclaire</p>
             </div>
@@ -1160,7 +1173,7 @@
               <img
                 src="img/fashion/14-cosmogirl-hippie/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Cosmogirl Hippie</p>
             </div>
@@ -1172,7 +1185,7 @@
               <img
                 src="img/fashion/17-glamour-graphics/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Glamour Graphics</p>
             </div>
@@ -1181,13 +1194,13 @@
           <div class="col-md-4">
             <!-- 06 -->
             <div
-              class="col-md-10 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/fashion/06-fox-vienna', 4)"
             >
               <img
                 src="img/fashion/06-fox-vienna/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Fox Vienna</p>
             </div>
@@ -1199,31 +1212,31 @@
               <img
                 src="img/fashion/09-elle-singapore/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Elle Singapore</p>
             </div>
             <!-- 12 -->
             <div
-              class="col-md-11 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/fashion/12-squeez', 6)"
             >
               <img
                 src="img/fashion/12-squeez/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Squeez</p>
             </div>
             <!-- 15 -->
             <div
-              class="col-md-9 mx-auto pb-4 relative"
+              class="col mx-auto pb-4 relative"
               onclick="openFSLightbox('img/fashion/15-esquire-actor-tigo-gernandt', 6)"
             >
               <img
                 src="img/fashion/15-esquire-actor-tigo-gernandt/sean-mac-andrew-01.jpg"
                 alt=""
-                class="w-100"
+                class="w-100" loading="lazy"
               />
               <p class="select">Esquire Actor Tigo Gernandt</p>
             </div>
@@ -1237,37 +1250,25 @@
         <div class="row">
           <div class="col-md-7">
             <div>
-              <h4>Mac Mac Andrew</h4>
-              <p>Phone:&nbsp;<a href="tel:+34-641-35-00-15">+34 641 35 00 15</a><br/>Email:&nbsp;<a href="mailto:macandrewart@gmail.com">macandrewart@gmail.com</a></p>
+              <h4>Mac Andrew</h4>
 
               <p class="mt-4">
-                Is regarded as one of the most versatile and respected
-                photographers in the business. He believes that every shot
-                should be a work of art and regardless if part of a story or
-                not, each image should achieve a stand-alone status based on its
-                own merits and not just as part of a series. Whether
-                photographing fashion, art pieces or commercial, the approach
-                remains constant and each image bears his signature qualities.
-                His methodical approach of engaging with the subject is
-                conceptual, which makes him an extraordinarily talented
-                photographer as well as being an Art director. On the set, no
-                matter if it's in the studio or location, he is witty,
-                conversational and seemingly easy-going but never loses sight of
-                what the end result will be. The perfection he aims for is
-                revealed in his SOP (standard operating procedure) coupled with
-                his individual approach to each client’s needs and requirements.
-                Interacting with the clients and listening as well as hearing
-                their requests is essential to creating the most riveting image
-                possible. His diverse oeuvre has branded him a chameleon as his
-                images are tailored to each client’s requirements and
-                expectations.
+                Regarded as one of the most versatile photographers in the
+                business. Each image bears his signature quality — whether
+                fashion, commercial, or personal work. His diverse oeuvre has
+                branded him a chameleon, his images always tailored to each
+                client’s expectations.
+              </p>
+
+              <p class="mt-4 small-text">
+                <a href="mailto:macandrewart@gmail.com">macandrewart@gmail.com</a>
               </p>
             </div>
           </div>
           <div class="col-md-5">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/mac-andrew-bio-bw.jpg"
                 alt=""
               />
@@ -1281,7 +1282,7 @@
           <div class="col">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/painting/01-painting.jpg"
                 alt=""
               />
@@ -1324,7 +1325,7 @@
           <div class="col">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/expos/04-het-arsenal.jpg"
                 alt=""
               />
@@ -1334,51 +1335,61 @@
         </div>
 
         <!-- Row 4 -->
-        <div class="row mt-5">
-          <div class="col card-columns">
+        <div class="row mt-5 g-4">
+          <div class="col-6">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/expos/03-arsenaal-restaurant.jpg"
                 alt=""
               />
               <p class="text-center">Arsenaal Restaurant</p>
             </div>
+          </div>
+          <div class="col-6">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/expos/01-expo-man-ray-paris.jpg"
                 alt=""
               />
               <p class="text-center">Expo Man-Ray in Paris</p>
             </div>
+          </div>
+          <div class="col-6">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/expos/02-expo-amsterdam.jpg"
                 alt=""
               />
               <p class="text-center">Amsterdam Gallery</p>
             </div>
+          </div>
+          <div class="col-6">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/expos/07-colette-artists-paris.jpg"
                 alt=""
               />
               <p class="text-center">Colette Artists in Paris</p>
             </div>
+          </div>
+          <div class="col-6">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/expos/06-cout-sejour-boutique.jpg"
                 alt=""
               />
               <p class="text-center">Cout Sejour Boutique</p>
             </div>
+          </div>
+          <div class="col-6">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/expos/05-cout-sejour-boutique.jpg"
                 alt=""
               />
@@ -1399,7 +1410,7 @@
           <div class="col">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/clients/02-client.jpg"
                 alt=""
               />
@@ -1409,35 +1420,41 @@
         </div>
 
         <!-- Row 6 -->
-        <div class="row mt-5">
-          <div class="col card-columns">
+        <div class="row mt-5 g-4">
+          <div class="col-6">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/clients/01-client.jpg"
                 alt=""
               />
               <p class="text-center">Anonymous Client</p>
             </div>
+          </div>
+          <div class="col-6">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/clients/03-client.jpg"
                 alt=""
               />
               <p class="text-center">Anonymous Client</p>
             </div>
+          </div>
+          <div class="col-6">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/studio-wfc/01-photo-studio-wfc.jpg"
                 alt=""
               />
               <p class="text-center">Amsterdam Studio in WFC</p>
             </div>
+          </div>
+          <div class="col-6">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/studio-wfc/02-photo-studio-wfc.jpg"
                 alt=""
               />
@@ -1451,7 +1468,7 @@
           <div class="col">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/fashion-fairs/03-bronx-and-blink-paris.jpg"
                 alt=""
               />
@@ -1475,43 +1492,51 @@
         </div>
 
         <!-- Row 8 -->
-        <div class="row mt-5">
-          <div class="col card-columns">
+        <div class="row mt-5 g-4">
+          <div class="col-6">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/fashion-fairs/01-blink-dusseldorf.jpg"
                 alt=""
               />
               <p class="text-center">Blink at the Dusseldorf Fair</p>
             </div>
+          </div>
+          <div class="col-6">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/fashion-fairs/02-blink-dusseldorf.jpg"
                 alt=""
               />
               <p class="text-center">Blink at the Dusseldorf Fair</p>
             </div>
+          </div>
+          <div class="col-6">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/fashion-fairs/04-mexx-at-bread-and-butter-berlin.jpg"
                 alt=""
               />
               <p class="text-center">MEXX - Bread and Butter - Berlin</p>
             </div>
+          </div>
+          <div class="col-6">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/fashion-fairs/05-mexx-berlin.jpg"
                 alt=""
               />
               <p class="text-center">MEXX - Bread and Butter - Berlin</p>
             </div>
+          </div>
+          <div class="col-6">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/fashion-fairs/06-petrol-brochure.jpg"
                 alt=""
               />
@@ -1543,11 +1568,11 @@
         </div>
 
         <!-- Row 10 -->
-        <div class="row mt-5">
-          <div class="col card-columns">
+        <div class="row mt-5 g-4">
+          <div class="col-6">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/free-work/01-interior-department-de-bijenkorf.jpg"
                 alt=""
               />
@@ -1555,47 +1580,55 @@
                 Interior Department De Bijenkorf in Amsterdam
               </p>
             </div>
+          </div>
+          <div class="col-6">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/free-work/02-carnaval-band-in-rio-de-janeiro.jpg"
                 alt=""
               />
               <p class="text-center">Carnaval Band in Rio de Janeiro</p>
             </div>
+          </div>
+          <div class="col-6">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/free-work/03-gili-islands-in-bali.jpg"
                 alt=""
               />
               <p class="text-center">Gili Islands in Bali</p>
             </div>
+          </div>
+          <div class="col-6">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/free-work/04-grace-insurance-headquarters-new-york.jpg"
                 alt=""
               />
               <p class="text-center">Grace insurance HQ in New York</p>
             </div>
+          </div>
+          <div class="col-6">
             <div class="card border-0 rounded-0">
               <img
-                class="card-img-top"
+                class="card-img-top" loading="lazy"
                 src="img/info/free-work/05-bellas-artes-buenos-aires.jpg"
                 alt=""
               />
               <p class="text-center">Bellas Artes in Buenos Aires</p>
             </div>
-            <div class="col">
-              <div class="card border-0 rounded-0">
-                <img
-                  class="card-img-top"
-                  src="img/info/free-work/06-torso.jpg"
-                  alt=""
-                />
-                <p class="text-center">Torso 1988 - Royal Academy of Art</p>
-              </div>
+          </div>
+          <div class="col-6">
+            <div class="card border-0 rounded-0">
+              <img
+                class="card-img-top" loading="lazy"
+                src="img/info/free-work/06-torso.jpg"
+                alt=""
+              />
+              <p class="text-center">Torso 1988 - Royal Academy of Art</p>
             </div>
           </div>
         </div>
@@ -1620,373 +1653,8 @@
           “SEAN MACANDREW” 1990 - 2020
         </p>
       </div>
-
-      <!-- World -->
-      <div class="tab-pane mx-3 fade mt-5" id="world">
-        <!-- Video -->
-        <video
-          autoplay
-          muted
-          loop
-          controls
-          id="promot-video"
-          class="video-full"
-        >
-          <source src="/video/promo-480p.mp4" type="video/mp4" />
-          <source src="/video/promo-480p.webm" type="video/webm" />
-        </video>
-
-        <h4 class="mt-4">Couturier Juergen C. Hoerl</h4>
-
-        <p class="mt-4">
-          Austrian fashion designer Juergen draws his inspiration from cultures
-          and using his sharp engaging eye to find his inspiration around the
-          world. Proposing my concept was an instant hit, why you might ask.
-          While I was based in Vienna I did a lot of scouting on locations. The
-          reason is simple, It was shot in his cultural environment the famous
-          Naschmarkt. Not only did I use the Naschmarkt but his design studio as
-          well, which is literally around the corner of the Naschmarkt. Because
-          the locations were in the nearby vicinity, it made our day go easy and
-          comfortable for Juergen and his models.  They apologized for the fact
-          that my surname was long to get it in the design of the video…… I
-          loved that because everybody calls me MAC anyway. Olympus head office
-          in Vienna sponsored me with the EM1 Mark II mirrorless camera bodies
-          which are half the size and weight.  The lenses 12-40
-          / F2.8  &  40-150 / 2.8  are fast and accurate in autofocus. The
-          effortless, intuitive interface, smooth zooming and the complete
-          weight of the system are unmatched. I Used Canon 5d mark III as my
-          backup body, which in most cases I never needed. Olympus is built for
-          professionals and I personally would recommend giving this camera a
-          tryout for their outstanding performance. I want to thank Olympus very
-          much for their loyalty and support.
-        </p>
-
-        <img
-          class="mt-4 w-100"
-          src="img/world/mango-pitch/sean-mac-andrew-01.jpg"
-          alt=""
-        />
-
-        <h4 class="mt-4">FOXY LADY</h4>
-
-        <div class="mt-4 py-3 px-3 gray-box">
-          <p>
-            The importance of pitching is to maintain your level of creativeness
-            and working in a precise order.  For big clients like Mango or Zara
-            demands precisional repetition photography, PRP for short. The 3 key
-            points of making sure that these clients are interested, is your eye
-            for detail !!  The clothing should be recognized in the design,
-            details, and products of these brands. Casting is very important to
-            make your images look strong and feminine that will suit the
-            concept. Olga, a very experienced Model from Ukraine, was perfect
-            for the shoot.  She was kind considerate and very committed. With
-            our team we made my creative concept come to life. Therefore I am
-            grateful for my complete loving team to make this day wonderful and
-            creative. I would love to give tribute to Olympus cameras who
-            sponsored me with their fantastic EM1 Mark II mirrorless camera
-            bodies and superb lenses. Most shots I did with the 12-40
-            / F2.8  (24-70 equivalent 35mm). The fast accurate autofocus and
-            smooth zooming are outstanding. What made me change my mind is the
-            weight and an effortless interface. I Used Canon 5d mark III as my
-            backup body. My recommendation for professionals is to give Olympus
-            a tryout for their outstanding performance.
-          </p>
-        </div>
-
-        <div class="row mt-4">
-          <div class="col card-columns">
-            <div
-              class="card border-0 rounded-0 pointer"
-              onclick="openFSLightbox('img/world/mango-pitch', 8)"
-            >
-              <img
-                class="card-img-top"
-                src="img/world/mango-pitch/sean-mac-andrew-02.jpg"
-                alt=""
-              />
-            </div>
-            <div
-              class="card border-0 rounded-0 pointer"
-              onclick="openFSLightbox('img/world/mango-pitch', 8)"
-            >
-              <img
-                class="card-img-top"
-                src="img/world/mango-pitch/sean-mac-andrew-03.jpg"
-                alt=""
-              />
-            </div>
-            <div
-              class="card border-0 rounded-0 pointer"
-              onclick="openFSLightbox('img/world/mango-pitch', 8)"
-            >
-              <img
-                class="card-img-top"
-                src="img/world/mango-pitch/sean-mac-andrew-04.jpg"
-                alt=""
-              />
-            </div>
-            <div
-              class="card border-0 rounded-0 pointer"
-              onclick="openFSLightbox('img/world/mango-pitch', 8)"
-            >
-              <img
-                class="card-img-top"
-                src="img/world/mango-pitch/sean-mac-andrew-07.jpg"
-                alt=""
-              />
-            </div>
-            <div
-              class="card border-0 rounded-0 pointer"
-              onclick="openFSLightbox('img/world/mango-pitch', 8)"
-            >
-              <img
-                class="card-img-top"
-                src="img/world/mango-pitch/sean-mac-andrew-06.jpg"
-                alt=""
-              />
-            </div>
-            <div
-              class="card border-0 rounded-0 pointer"
-              onclick="openFSLightbox('img/world/mango-pitch', 8)"
-            >
-              <img
-                class="card-img-top"
-                src="img/world/mango-pitch/sean-mac-andrew-05.jpg"
-                alt=""
-              />
-            </div>
-            <div
-              class="card border-0 rounded-0 pointer"
-              onclick="openFSLightbox('img/world/mango-pitch', 8)"
-            >
-              <img
-                class="card-img-top"
-                src="img/world/mango-pitch/sean-mac-andrew-08.jpg"
-                alt=""
-              />
-              <p class="text-center"></p>
-            </div>
-          </div>
-        </div>
-
-        <h4 class="mt-4">Twinlife</h4>
-
-        <!-- Video -->
-        <video
-          muted
-          autoplay
-          controls
-          loop
-          id="promot-video"
-          class="video-full"
-        >
-          <source src="/video/twinlife-boys.mp4" type="video/mp4" />
-          <!--            <source src="/video/promo-480p.webm" type="video/webm" />-->
-        </video>
-
-        <div class="mt-4 py-3 px-3 gray-box">
-          <p>
-            Twinlife is established by professional soccer players “the brothers
-            - de Boer” Focusing on sports wear for man and boys.They requested
-            campaign and video content for their new images focusing on the new
-            casual collection.
-          </p>
-        </div>
-
-        <div class="row mt-4">
-          <div class="col card-columns">
-            <div
-              class="card border-0 rounded-0 pointer"
-              onclick="openFSLightbox('img/world/twinlife', 2)"
-            >
-              <img
-                class="card-img-top"
-                src="img/world/twinlife/sean-mac-andrew-01.jpg"
-                alt=""
-              />
-            </div>
-            <div
-              class="card border-0 rounded-0 pointer"
-              onclick="openFSLightbox('img/world/twinlife', 2)"
-            >
-              <img
-                class="card-img-top"
-                src="img/world/twinlife/sean-mac-andrew-02.jpg"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-
-        <h4 class="mt-4">Sunshades</h4>
-
-        <div class="mt-4 py-3 px-3 gray-box">
-          <p>
-            Pablo Martinez is one of Spanish up coming top models. Helping Pablo
-            to get new content for his portfolio made me go a step further to
-            get him on pitching for sun shade companies. His good masculine look
-            and talent was significant to establish these shots.
-          </p>
-        </div>
-
-        <div class="row mt-4">
-          <div class="col card-columns">
-            <div
-              class="card border-0 rounded-0 pointer"
-              onclick="openFSLightbox('img/world/sunshades', 5)"
-            >
-              <img
-                class="card-img-top"
-                src="img/world/sunshades/sean-mac-andrew-01.jpg"
-                alt=""
-              />
-            </div>
-            <div
-              class="card border-0 rounded-0 pointer"
-              onclick="openFSLightbox('img/world/sunshades', 5)"
-            >
-              <img
-                class="card-img-top"
-                src="img/world/sunshades/sean-mac-andrew-05.jpg"
-                alt=""
-              />
-            </div>
-            <div
-              class="card border-0 rounded-0 pointer"
-              onclick="openFSLightbox('img/world/sunshades', 5)"
-            >
-              <img
-                class="card-img-top"
-                src="img/world/sunshades/sean-mac-andrew-03.jpg"
-                alt=""
-              />
-            </div>
-            <div
-              class="card border-0 rounded-0 pointer"
-              onclick="openFSLightbox('img/world/sunshades', 5)"
-            >
-              <img
-                class="card-img-top"
-                src="img/world/sunshades/sean-mac-andrew-04.jpg"
-                alt=""
-              />
-            </div>
-            <div
-              class="card border-0 rounded-0 pointer"
-              onclick="openFSLightbox('img/world/sunshades', 5)"
-            >
-              <img
-                class="card-img-top"
-                src="img/world/sunshades/sean-mac-andrew-02.jpg"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-
-        <h4 class="mt-4">Arjuna</h4>
-
-        <div class="mt-4 py-3 px-3 gray-box">
-          <p>
-            Arjuna design is a Bali & Amsterdam based luxury jewelry design
-            company founded by Danny van Oortmerssen . His jewelry is inspired
-            by nature and the art of Asia, combining traditional Balinese and
-            classical European jewelry-making techniques.His jewelry can be
-            characterized as masculine, exotic, and somewhat mystical. He
-            approached me to do his art direction and photography. My main goal
-            was to implement the human body in it’s purest form.My approach was
-            to find locations in Bali to complement the nude with the nature
-            from Bali.
-          </p>
-        </div>
-
-        <div class="row mt-4">
-          <div class="col card-columns">
-            <div
-              class="card border-0 rounded-0 pointer"
-              onclick="openFSLightbox('img/world/arjuna', 6)"
-            >
-              <img
-                class="card-img-top"
-                src="img/world/arjuna/sean-mac-andrew-01.jpg"
-                alt=""
-              />
-            </div>
-            <div
-              class="card border-0 rounded-0 pointer"
-              onclick="openFSLightbox('img/world/arjuna', 6)"
-            >
-              <img
-                class="card-img-top"
-                src="img/world/arjuna/sean-mac-andrew-02.jpg"
-                alt=""
-              />
-            </div>
-            <div
-              class="card border-0 rounded-0 pointer"
-              onclick="openFSLightbox('img/world/arjuna', 6)"
-            >
-              <img
-                class="card-img-top"
-                src="img/world/arjuna/sean-mac-andrew-03.jpg"
-                alt=""
-              />
-            </div>
-            <div
-              class="card border-0 rounded-0 pointer"
-              onclick="openFSLightbox('img/world/arjuna', 6)"
-            >
-              <img
-                class="card-img-top"
-                src="img/world/arjuna/sean-mac-andrew-04.jpg"
-                alt=""
-              />
-            </div>
-            <div
-              class="card border-0 rounded-0 pointer"
-              onclick="openFSLightbox('img/world/arjuna', 6)"
-            >
-              <img
-                class="card-img-top"
-                src="img/world/arjuna/sean-mac-andrew-05.jpg"
-                alt=""
-              />
-            </div>
-            <div
-              class="card border-0 rounded-0 pointer"
-              onclick="openFSLightbox('img/world/arjuna', 6)"
-            >
-              <img
-                class="card-img-top"
-                src="img/world/arjuna/sean-mac-andrew-06.jpg"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- Social Apps -->
-      <div class="social-apps pr-3">
-        <div class="row">
-          <a
-            role="button"
-            href="mailto:macandrewart@gmail.com"
-            data-toggle="tooltip"
-            title="macandrewart@gmail.com"
-            ><i class="fas fa-envelope-square"></i
-          ></a>
-        </div>
-        <div class="row">
-          <a
-            role="button"
-            href="tel:+34-641-35-00-15"
-            data-toggle="tooltip"
-            data-delay="0"
-            title="+34 641 35 00 15"
-            ><i class="fas fa-phone-square"></i
-          ></a>
-        </div>
+      <div class="social-apps pe-3">
       </div>
 
       <!-- FS Lightbox -->
@@ -2005,46 +1673,46 @@
             <button
               id="modal-carousel-01-close"
               type="button"
-              class="close carousel-control-close"
+              class="carousel-control-close"
               onclick="closeFSLightbox()"
             >
               <i class="fas fa-times"></i>
-              <span class="sr-only">Close</span>
+              <span class="visually-hidden">Close</span>
             </button>
 
             <div
               id="modal-carousel-01"
               class="carousel slide"
-              data-interval="false"
+              data-bs-interval="false"
             >
               <div id="modal-carousel-inner" class="carousel-inner"></div>
 
-              <a
+              <button
                 class="carousel-control-prev"
                 id="modal-carousel-01-prev"
-                href="#modal-carousel-01"
-                role="button"
-                data-slide="prev"
+                type="button"
+                data-bs-target="#modal-carousel-01"
+                data-bs-slide="prev"
               >
                 <span
                   class="carousel-control-prev-icon"
                   aria-hidden="true"
                 ></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
                 class="carousel-control-next"
                 id="modal-carousel-01-next"
-                href="#modal-carousel-01"
-                role="button"
-                data-slide="next"
+                type="button"
+                data-bs-target="#modal-carousel-01"
+                data-bs-slide="next"
               >
                 <span
                   class="carousel-control-next-icon"
                   aria-hidden="true"
                 ></span>
-                <span class="sr-only">Next</span>
-              </a>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
         </div>
@@ -2052,21 +1720,9 @@
 
       <!-- Imports -->
       <script
-        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"
-      ></script>
-      <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"
-      ></script>
-      <script
-        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       ></script>
       <script src="js/default.js"></script>
-    </tab>
+    </div>
   </body>
 </html>
