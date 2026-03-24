@@ -2,32 +2,14 @@ $modal-content-bg: transparent !default;
 $modal-content-border-width: 0;
 $modal-backdrop-opacity: 0.9 !default;
 $modal-backdrop-bg: white !default;
-$carousel-control-color: black !default;
-$carousel-control-opacity: 0.4 !default;
-$carousel-control-transition: opacity 0.3s ease-in-out !default;
+$carousel-control-color: white !default;
+$carousel-control-opacity: 0 !default;
+$carousel-control-transition: opacity 0.4s ease-in-out !default;
 
-@import url(https://fonts.googleapis.com/css?family=Gruppo&display=swap);
-@import url(https://fonts.googleapis.com/css?family=Lato:300&display=swap);
-@import url("https://fonts.googleapis.com/css?family=Monoton&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Gruppo&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap");
 
 @import "../node_modules/bootstrap/scss/bootstrap";
-
-a:link {
-  text-decoration: none;
-}
-
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-a:active {
-  text-decoration: none;
-}
 
 .video-full {
   width: 100%;
@@ -49,7 +31,7 @@ a:active {
 p {
   span {
     display: block;
-    color: #333333;
+    color: rgba(255, 255, 255, 0.9);
     font-style: normal;
     font-weight: bold;
     margin-top: 1em;
@@ -57,47 +39,45 @@ p {
 }
 
 .gray-box {
-  background: #ededed;
-  border-left: 8px solid #009ddf;
+  background: #111;
+  border-left: 8px solid rgba(255, 255, 255, 0.3);
 }
 
 .black-box-header {
-  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: xx-large;
+  letter-spacing: 0.1em;
 }
 
 .black-box {
-  background: #000000;
+  background: #111;
   color: #ffffff;
   width: 100%;
   min-width: 100%;
   p {
     font-size: x-large;
-    font-family: "Barlow Semi Condensed", sans-serif;
+    font-family: "Lato", sans-serif;
   }
 }
 
 blockquote {
   font-family: "Lato", sans-serif;
   font-style: italic;
-
-  color: #555555;
+  color: rgba(255, 255, 255, 0.7);
   padding: 1.2em 30px 1.2em 75px;
-  border-left: 8px solid #009ddf;
+  border-left: 8px solid rgba(255, 255, 255, 0.25);
   line-height: 1.6;
   position: relative;
-  background: #ededed;
+  background: #111;
 }
 
 blockquote::before {
   z-index: 1500;
-
   font-family: Arial;
   content: "\201C";
-  color: #009ddf;
-  opacity: 0.4;
+  color: #fff;
+  opacity: 0.08;
   font-size: 14em;
-
   position: absolute;
   left: 10px;
   top: -50px;
@@ -106,7 +86,7 @@ blockquote::before {
 
 blockquote span {
   display: block;
-  color: #333333;
+  color: #fff;
   font-style: normal;
   font-weight: bold;
   margin-top: 1em;
@@ -122,6 +102,7 @@ h2,
 h3,
 h4 {
   font-family: "Lato", sans-serif;
+  color: #fff;
 }
 
 h2,
@@ -160,12 +141,14 @@ p {
 }
 
 .my-nav {
-  font-family: "Gruppo", cursive;
-  font-size: medium;
-  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
   .nav-item {
-    margin-left: 3em;
-    margin-right: 3em;
+    margin-left: 2em;
+    margin-right: 2em;
   }
 }
 
@@ -176,45 +159,41 @@ p {
 }
 
 a:link {
-  color: black;
+  text-decoration: none;
+  color: #fff;
 }
 
 a:visited {
-  color: black;
+  text-decoration: none;
+  color: #fff;
 }
 
 a:hover {
-  color: #009ddf;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 a:active {
-  color: black;
+  text-decoration: none;
+  color: #fff;
 }
 
-.rotate-90deg {
-  transition: 0.7s;
-  -webkit-transition: 0.7s;
-  -moz-transition: 0.7s;
-  -ms-transition: 0.7s;
-  -o-transition: 0.7s;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
+.my-logo {
+  margin-right: 1.5em;
+  filter: invert(1);
 }
 
-.rotate-90deg:hover {
-  transition: 0.7s;
-  -webkit-transition: 0.7s;
-  -moz-transition: 0.7s;
-  -ms-transition: 0.7s;
-  -o-transition: 0.7s;
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
+// Nav link colors on dark background
+.my-nav .nav-link {
+  color: rgba(255, 255, 255, 0.5) !important;
+
+  &.active,
+  &:hover {
+    color: #fff !important;
+  }
 }
 
+// Lightbox close button — hidden by default, revealed on hover
 .carousel-control-close {
   position: fixed;
   top: 0;
@@ -224,20 +203,49 @@ a:active {
   right: 0;
   text-align: center;
   text-shadow: none;
-
-  color: black !important;
-  opacity: 0.4;
-
-  -webkit-transition: opacity 0.3s ease-in-out;
-  -moz-transition: opacity 0.3s ease-in-out;
-  -o-transition: opacity 0.3s ease-in-out;
-  -ms-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
+  color: white !important;
+  opacity: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  transition: opacity 0.4s ease-in-out;
 }
 
-.carousel-control-close:hover {
-  color: black !important;
-  opacity: 0.9;
+.modal-content:hover {
+  .carousel-control-close,
+  .carousel-control-prev,
+  .carousel-control-next {
+    opacity: 0.7;
+  }
+}
+
+.carousel-control-close {
+  &:hover,
+  &:focus {
+    color: white !important;
+    opacity: 1;
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+// Lightbox prev/next — hidden by default
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+    outline: none;
+    box-shadow: none;
+  }
 }
 
 .relative {
@@ -248,34 +256,23 @@ a:active {
   cursor: pointer;
 }
 
+// Portfolio hover — pure dark dim, no text (image speaks for itself)
 .select {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
   cursor: pointer;
-
-  font-family: "Gruppo", cursive;
-  font-size: 2em;
-  text-align: center;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  color: black !important;
-  background: white !important;
+  font-size: 0;
+  color: transparent !important;
+  background: rgba(0, 0, 0, 0) !important;
   opacity: 0;
+  transition: opacity 0.35s ease-in-out, background 0.35s ease-in-out;
 
-  -webkit-transition: opacity 0.3s ease-in-out;
-  -moz-transition: opacity 0.3s ease-in-out;
-  -o-transition: opacity 0.3s ease-in-out;
-  -ms-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.select:hover {
-  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.25) !important;
+  }
 }
 
 .modal-full {
@@ -305,6 +302,107 @@ a:active {
   bottom: 85%;
 }
 
-.my-carousel > .carousel-inner > .carousel-item > img {
-  max-height: 60vh;
+// Homepage carousel — full viewport, black background
+.my-carousel {
+  background: #000;
+
+  > .carousel-inner > .carousel-item > img {
+    height: 100vh;        // fallback for older browsers
+    height: 100svh;       // adapts to mobile browser chrome
+    width: 100%;
+    object-fit: contain;
+    max-height: none;
+  }
+}
+
+// Mobile hamburger button
+.hamburger-btn {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 300;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.3rem;
+  padding: 4px 8px;
+  line-height: 1;
+  display: none;
+}
+
+// Mobile nav overlay
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-nav-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #000;
+  padding: 4px 8px;
+  line-height: 1;
+}
+
+.mobile-nav-overlay .nav-link {
+  font-family: "Lato", sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #000 !important;
+  padding: 0.6em 0;
+  font-weight: 300;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 767px) {
+  .hamburger-btn {
+    display: block;
+  }
+  .my-nav {
+    display: none !important;
+  }
+  .my-header {
+    padding-right: 3rem;
+  }
+}
+
+// Page-load fade-in
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+body {
+  background: #000;
+  animation: pageFadeIn 0.6s ease-in-out;
+}
+
+// Info section cards — transparent on dark background
+.card {
+  background: transparent;
+  color: #fff;
+}
+
+// Tab content fade-in when switching sections
+.tab-pane.fade {
+  transition: opacity 0.4s ease-in-out;
 }

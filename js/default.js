@@ -17,7 +17,9 @@ function openFSLightbox(url, length) {
   document.getElementById("modal-carousel-inner").innerHTML = html;
 
   // Open Modal
-  var myModal = $("#my-modal-01").modal();
+  var modalEl = document.getElementById("my-modal-01");
+  var myModal = new bootstrap.Modal(modalEl);
+  myModal.show();
 
   // Enable key handler
   document.onkeydown = function(e) {
@@ -35,16 +37,26 @@ function openFSLightbox(url, length) {
   };
 }
 
+function toggleMobileNav() {
+  document.getElementById("mobile-nav-overlay").classList.toggle("d-none");
+}
+
 function closeFSLightbox() {
   // Disable key handler
   document.onkeydown = null;
 
-  $("#my-modal-01").modal("hide");
+  var modalEl = document.getElementById("my-modal-01");
+  var myModal = bootstrap.Modal.getInstance(modalEl);
+  if (myModal) myModal.hide();
 }
 
 // Randomize first image in Carousel
 var $randSlide = Math.floor(Math.random() * 93 + 1);
 
-$(".carousel-item")
-  .eq($randSlide)
-  .addClass("active");
+document.addEventListener("DOMContentLoaded", function () {
+  var items = document.querySelectorAll(".carousel-item");
+  if (items.length > 0) {
+    var idx = Math.floor(Math.random() * items.length);
+    items[idx].classList.add("active");
+  }
+});
