@@ -146,24 +146,84 @@ p {
   z-index: 2;
 }
 
-.my-nav {
+// Top-left burger menu wrapper
+.burger-menu {
   position: fixed;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  z-index: 50;
-  width: auto;
+  top: 15px;
+  left: 15px;
+  z-index: 300;
+}
+
+// Burger icon button — three lines
+.burger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 21px;
+  height: 15px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 2px;
+    transition: background 0.2s ease;
+  }
+
+  &:hover span {
+    background: #fff;
+  }
+}
+
+// Dropdown panel — hidden by default, slides down when .open is on .burger-menu
+.burger-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
   background: rgba(255, 255, 255, 0.14);
-  border-radius: 20px 0 0 20px;
+  border-radius: 0 20px 20px 20px;
   overflow: hidden;
   padding: 0;
   font-family: "Lato", sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 400;
   letter-spacing: 0.3em;
   text-transform: uppercase;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+
   .nav-item {
     margin: 0;
+  }
+}
+
+.burger-menu.open .burger-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+// Nav link colors — matching original style
+.burger-dropdown .nav-link {
+  color: rgba(255, 255, 255, 0.5) !important;
+  background: transparent;
+  border-radius: 0;
+  padding: 0.75em 1.9em 0.75em 1.2em;
+  display: block;
+  transition: background 0.25s ease, color 0.25s ease;
+  white-space: nowrap;
+
+  &.active,
+  &:hover {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -203,22 +263,6 @@ a:active {
 .my-logo {
   margin-right: 1.5em;
   filter: invert(1) opacity(0.45);
-}
-
-// Nav link colors on dark background — single grouped box
-.my-nav .nav-link {
-  color: rgba(255, 255, 255, 0.5) !important;
-  background: transparent;
-  border-radius: 0;
-  padding: 0.75em 1.2em 0.75em 1em;
-  display: block;
-  transition: background 0.25s ease, color 0.25s ease;
-
-  &.active,
-  &:hover {
-    color: #fff !important;
-    background: rgba(255, 255, 255, 0.1);
-  }
 }
 
 // Lightbox close button — hidden by default, revealed on hover
@@ -352,73 +396,8 @@ a:active {
 }
 
 
-// Mobile hamburger button
-.hamburger-btn {
-  position: fixed;
-  top: 18px;
-  right: 18px;
-  z-index: 300;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: #fff;
-  font-size: 1.3rem;
-  padding: 4px 8px;
-  line-height: 1;
-  display: none;
-}
-
-// Mobile nav overlay
-.mobile-nav-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  z-index: 500;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.mobile-nav-close {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  background: transparent;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #000;
-  padding: 4px 8px;
-  line-height: 1;
-}
-
-.mobile-nav-overlay .nav-link {
-  font-family: "Lato", sans-serif;
-  font-size: 1.8rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: #000 !important;
-  padding: 0.6em 0;
-  font-weight: 300;
-
-  &:hover {
-    opacity: 0.5;
-  }
-}
-
 @media (max-width: 767px) {
-  .hamburger-btn {
-    display: block;
-  }
-  .my-nav {
-    display: none !important;
-  }
   .my-header {
-    padding-right: 3rem;
     h1 {
       font-size: 2em;
     }

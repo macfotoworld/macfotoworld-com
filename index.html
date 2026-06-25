@@ -23,47 +23,28 @@
       <h1>MAC ANDREW</h1>
     </div>
 
-    <!-- Hamburger (mobile only) -->
-    <button class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileNav()">
-      <i class="fas fa-bars"></i>
-    </button>
-
-    <!-- Mobile nav overlay -->
-    <div class="mobile-nav-overlay d-none" id="mobile-nav-overlay">
-      <button class="mobile-nav-close" onclick="toggleMobileNav()">
-        <i class="fas fa-times"></i>
+    <!-- Burger menu (top left) -->
+    <div class="burger-menu" id="burger-menu">
+      <button class="burger-btn" id="burger-btn" onclick="toggleBurgerNav()" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
-      <ul class="nav flex-column text-center">
+      <ul class="burger-dropdown nav flex-column" id="burger-dropdown">
         <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" href="#home" onclick="toggleMobileNav()">HOME</a>
+          <a class="nav-link active" data-bs-toggle="tab" href="#home" onclick="closeBurgerNav()">HOME</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" href="#brands" onclick="toggleMobileNav()">BRANDS</a>
+          <a class="nav-link" data-bs-toggle="tab" href="#brands" onclick="closeBurgerNav()">BRANDS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" href="#fashion" onclick="toggleMobileNav()">FASHION</a>
+          <a class="nav-link" data-bs-toggle="tab" href="#fashion" onclick="closeBurgerNav()">FASHION</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" href="#info" onclick="toggleMobileNav()">INFO</a>
+          <a class="nav-link" data-bs-toggle="tab" href="#info" onclick="closeBurgerNav()">INFO</a>
         </li>
       </ul>
     </div>
-
-    <!-- Menu -->
-    <ul class="my-nav nav flex-column text-end">
-      <li class="nav-item">
-        <a class="nav-link active" data-bs-toggle="tab" href="#home">HOME</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="tab" href="#brands">BRANDS</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="tab" href="#fashion">FASHION</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="tab" href="#info">INFO</a>
-      </li>
-    </ul>
 
     <!-- Menu Content -->
     <div class="tab-content">

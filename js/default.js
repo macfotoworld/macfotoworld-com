@@ -38,9 +38,20 @@ function openFSLightbox(url, length) {
   };
 }
 
-function toggleMobileNav() {
-  document.getElementById("mobile-nav-overlay").classList.toggle("d-none");
+function toggleBurgerNav() {
+  document.getElementById("burger-menu").classList.toggle("open");
 }
+
+function closeBurgerNav() {
+  document.getElementById("burger-menu").classList.remove("open");
+}
+
+document.addEventListener("click", function(e) {
+  var menu = document.getElementById("burger-menu");
+  if (menu && !menu.contains(e.target)) {
+    menu.classList.remove("open");
+  }
+});
 
 function closeFSLightbox() {
   // Disable key handler
