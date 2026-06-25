@@ -149,11 +149,13 @@ p {
 .my-nav {
   position: fixed;
   top: 50%;
-  right: 2rem;
+  right: 0;
   transform: translateY(-50%);
   z-index: 50;
   width: auto;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 20px 0 0 20px;
+  overflow: hidden;
   padding: 0;
   font-family: "Lato", sans-serif;
   font-size: 0.7rem;
@@ -161,7 +163,7 @@ p {
   letter-spacing: 0.3em;
   text-transform: uppercase;
   .nav-item {
-    margin: 0.9em 0;
+    margin: 0;
   }
 }
 
@@ -200,16 +202,22 @@ a:active {
 
 .my-logo {
   margin-right: 1.5em;
-  filter: invert(1);
+  filter: invert(1) opacity(0.45);
 }
 
-// Nav link colors on dark background
+// Nav link colors on dark background — single grouped box
 .my-nav .nav-link {
   color: rgba(255, 255, 255, 0.5) !important;
+  background: transparent;
+  border-radius: 0;
+  padding: 0.75em 1.2em 0.75em 1em;
+  display: block;
+  transition: background 0.25s ease, color 0.25s ease;
 
   &.active,
   &:hover {
     color: #fff !important;
+    background: rgba(255, 255, 255, 0.1);
   }
 }
 
