@@ -351,7 +351,7 @@ document.addEventListener("click", function(e) {
 });
 
 // ── Theme toggle ──────────────────────────────────────────────────────────────
-if (localStorage.getItem("theme") === "light") {
+if (localStorage.getItem("theme") !== "dark") {
   document.body.classList.add("light");
 }
 
