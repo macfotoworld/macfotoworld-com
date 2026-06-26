@@ -43,7 +43,25 @@
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="tab" href="#info">INFO</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" id="search-nav-link" data-bs-toggle="tab" href="#search">SEARCH</a>
+        </li>
       </ul>
+    </div>
+
+    <!-- Theme toggle -->
+    <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">
+      <i class="fas fa-adjust"></i>
+    </button>
+
+    <!-- Search photo viewer -->
+    <div class="search-photo-viewer" id="search-photo-viewer">
+      <button class="carousel-control-close search-photo-close-btn" id="search-photo-close-btn" aria-label="Back to search" onclick="closeSearchPhoto()">
+        <i class="fas fa-times"></i>
+        <span class="visually-hidden">Close</span>
+      </button>
+      <img id="search-photo-img" src="" alt="" />
+      <div id="search-photo-tags" class="lb-tag-editor"></div>
     </div>
 
     <!-- Menu Content -->
@@ -75,6 +93,21 @@
           <div class="col-md-4" id="fashion-col-0"></div>
           <div class="col-md-4" id="fashion-col-1"></div>
           <div class="col-md-4" id="fashion-col-2"></div>
+        </div>
+      </div>
+
+      <!-- Search -->
+      <div class="tab-pane fade" id="search">
+        <div class="search-page">
+          <input
+            type="text"
+            class="search-input"
+            id="search-input"
+            placeholder="SEARCH..."
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <div class="search-results" id="search-results"></div>
         </div>
       </div>
 
@@ -491,14 +524,9 @@
       <div class="social-apps pe-3">
       </div>
 
-      <!-- Imports -->
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      ></script>
-      <script src="js/default.js"></script>
     </div>
 
-  <!-- FS Lightbox -->
+  <!-- FS Lightbox — direct child of body, outside tab-content -->
   <div
     class="modal fade"
     id="my-modal-01"
@@ -520,6 +548,8 @@
           <i class="fas fa-times"></i>
           <span class="visually-hidden">Close</span>
         </button>
+
+        <div id="lb-tag-editor" class="lb-tag-editor"></div>
 
         <div
           id="modal-carousel-01"
@@ -558,5 +588,8 @@
       </div>
     </div>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/default.js"></script>
   </body>
 </html>

@@ -15,8 +15,8 @@ $transition-slow:    0.4s ease-in-out;
 $modal-content-bg: transparent !default;
 $modal-content-border-width: 0;
 $modal-backdrop-opacity: 0.9 !default;
-$modal-backdrop-bg: white !default;
-$carousel-control-color: $color-dark !default;
+$modal-backdrop-bg: #000 !default;
+$carousel-control-color: $color-white !default;
 $carousel-control-opacity: 0 !default;
 $carousel-control-transition: opacity $transition-slow !default;
 
@@ -165,7 +165,7 @@ p {
   position: fixed;
   top: 15px;
   left: 15px;
-  z-index: 300;
+  z-index: 400;
 }
 
 // Burger icon button — three lines
@@ -179,6 +179,8 @@ p {
   border: none;
   cursor: pointer;
   padding: 0;
+  position: relative;
+  z-index: 401;
 
   span {
     display: block;
@@ -194,24 +196,27 @@ p {
   }
 }
 
-// Dropdown panel — hidden by default, slides down when .open is on .burger-menu
+// Full-screen overlay — hidden by default, shown when .open is on .burger-menu
 .burger-dropdown {
-  position: absolute;
-  top: calc(100% + 8px);
+  position: fixed;
+  top: 0;
   left: 0;
-  background: rgba(255, 255, 255, 0.14); // intentional — distinct value, no token
-  border-radius: 0 20px 20px 20px;
-  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 0;
   font-family: "Lato", sans-serif;
-  font-size: 0.75rem;
+  font-size: 1.1rem;
   font-weight: 400;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(-6px);
-  transition: opacity $transition-fast, transform $transition-fast;
+  transition: opacity 0.3s ease;
 
   .nav-item {
     margin: 0;
@@ -221,24 +226,212 @@ p {
 .burger-menu.open .burger-dropdown {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0);
 }
 
-// Nav link colors — matching original style
 .burger-dropdown .nav-link {
   color: $color-white-50 !important;
   background: transparent;
-  border-radius: 0;
-  padding: 0.75em 1.9em 0.75em 1.2em;
+  padding: 0.85em 2em;
   display: block;
-  transition: background 0.25s ease, color 0.25s ease;
+  text-align: center;
+  transition: color 0.25s ease;
   white-space: nowrap;
 
   &.active,
   &:hover {
     color: $color-white !important;
-    background: rgba(255, 255, 255, 0.1);
+    background: transparent;
   }
+}
+
+// Search page (tab-pane)
+.search-page {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 24px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid $color-white-30;
+  color: $color-white;
+  font-family: "Lato", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.4em 0;
+  outline: none;
+  caret-color: $color-white;
+
+  &::placeholder {
+    color: $color-white-30;
+  }
+}
+
+.search-results {
+  width: 100%;
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.search-result-item {
+  cursor: pointer;
+  position: relative;
+
+  img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+    opacity: 0.75;
+    transition: opacity $transition-fast;
+  }
+
+  p {
+    font-family: "Lato", sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $color-white-50;
+    text-align: center;
+    margin: 6px 0 0;
+  }
+
+  &:hover img { opacity: 1; }
+  &:hover p { color: $color-white; }
+}
+
+.search-no-results {
+  font-family: "Lato", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: $color-white-30;
+  text-align: center;
+  margin-top: 12px;
+  grid-column: 1 / -1;
+}
+
+// ── Search single-photo viewer ────────────────────────────────────────────────
+.search-photo-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 600;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: -1;
+  }
+
+  &.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  img {
+    width: auto;
+    height: 100vh;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  &:hover .search-photo-close-btn,
+  &:hover .lb-tag-editor {
+    opacity: 1;
+  }
+
+  .search-photo-close-btn {
+    color: $color-white !important;
+    &:hover, &:focus { color: $color-white !important; }
+  }
+
+}
+
+// ── Lightbox tag editor ───────────────────────────────────────────────────────
+.lb-tag-editor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  opacity: 0;
+  transition: opacity $transition-slow;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.modal-content:hover .lb-tag-editor {
+  opacity: 1;
+}
+
+.lb-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Lato", sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $color-white-70;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  padding: 3px 7px;
+  cursor: default;
+
+  .lb-tag-remove {
+    cursor: pointer;
+    opacity: 0.5;
+    font-size: 0.55rem;
+    transition: opacity $transition-fast;
+
+    &:hover { opacity: 1; }
+  }
+}
+
+.lb-tag-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid $color-white-30;
+  color: $color-white-70;
+  font-family: "Lato", sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  outline: none;
+  padding: 2px 4px;
+  width: 100px;
+  caret-color: $color-white;
+
+  &::placeholder { color: $color-white-30; }
 }
 
 .tab-content {
@@ -276,7 +469,7 @@ a:active {
 
 .my-logo {
   margin-right: 1.5em;
-  filter: invert(1) opacity(0.45);
+  filter: invert(1) opacity(0.75);
 }
 
 // Lightbox close button — hidden by default, revealed on hover
@@ -289,7 +482,7 @@ a:active {
   right: 0;
   text-align: center;
   text-shadow: none;
-  color: $color-dark !important;
+  color: $color-white !important;
   opacity: 0;
   background: transparent;
   border: none;
@@ -309,7 +502,7 @@ a:active {
 .carousel-control-close {
   &:hover,
   &:focus {
-    color: $color-dark !important;
+    color: $color-white !important;
     opacity: 1;
     outline: none;
     box-shadow: none;
@@ -448,4 +641,95 @@ body {
 // Tab content fade-in when switching sections
 .tab-pane.fade {
   transition: opacity $transition-slow;
+}
+
+// ── Theme toggle button ───────────────────────────────────────────────────────
+.theme-btn {
+  position: fixed;
+  top: 13px;
+  right: 15px;
+  z-index: 401;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: $color-white-70;
+  font-size: 15px;
+  line-height: 15px;
+  transition: color $transition-fast;
+
+  &:hover { color: $color-white; }
+}
+
+// ── Light theme ───────────────────────────────────────────────────────────────
+body.light {
+  background: #f5f5f5;
+
+  // Header
+  .my-header {
+    background: #f5f5f5;
+    h1 { color: #111; }
+  }
+
+  .my-logo { filter: opacity(0.55); }
+
+  // Burger
+  .burger-btn span { background: rgba(0, 0, 0, 0.6); }
+  .burger-btn:hover span { background: #000; }
+  .burger-dropdown { background: rgba(0, 0, 0, 0.85); }
+
+  // Theme button
+  .theme-btn { color: rgba(0, 0, 0, 0.5); }
+  .theme-btn:hover { color: #000; }
+
+  // Typography
+  p, h2, h3, h4 { color: #111; }
+  p span { color: #333; }
+  a:link, a:visited { color: #111; }
+  a:hover { color: rgba(0, 0, 0, 0.5); }
+
+  // Blockquote
+  blockquote {
+    background: #e8e8e8;
+    border-left-color: rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.7);
+  }
+  blockquote span { color: #111; }
+  blockquote::before { color: #000; }
+
+  // Tab content and home carousel
+  .tab-content { background: #f5f5f5; }
+  .my-carousel { background: #f5f5f5; }
+
+  // Portfolio title hover
+  .select:hover {
+    color: $color-white-90 !important;
+    background: $color-overlay !important;
+  }
+
+  // Cards
+  .card { background: transparent; color: #111; }
+  .card p { color: #444; }
+
+  // Search photo viewer backdrop and controls
+  .search-photo-viewer::before { background: rgba(255, 255, 255, 0.9); }
+  .search-photo-viewer .search-photo-close-btn { color: #111 !important; }
+  .search-photo-viewer .search-photo-close-btn:hover { color: #000 !important; }
+
+  // Lightbox backdrop, content and controls
+  .modal-backdrop { background-color: #fff; }
+  .modal-content { background: #fff; }
+  .carousel-control-close { color: #111 !important; }
+  .carousel-control-close:hover { color: #000 !important; }
+
+  // Search page
+  .search-input {
+    color: #111;
+    border-bottom-color: rgba(0, 0, 0, 0.3);
+    caret-color: #111;
+    &::placeholder { color: rgba(0, 0, 0, 0.3); }
+  }
+  .search-result-item p { color: rgba(0, 0, 0, 0.6); }
+  .search-result-item:hover p { color: #111; }
+  .search-no-results { color: rgba(0, 0, 0, 0.3); }
 }
