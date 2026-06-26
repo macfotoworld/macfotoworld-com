@@ -8,6 +8,6 @@ deps:
 	npm install bootstrap
 
 css: clean
-	sass scss/custom.scss css/custom.css
+	sass --silence-deprecation=import --silence-deprecation=global-builtin --silence-deprecation=color-functions --silence-deprecation=if-function scss/custom.scss css/custom.css
 
 .PHONY: clean deps css
